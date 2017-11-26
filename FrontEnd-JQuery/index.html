@@ -6,10 +6,15 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>UTNFRA JWT JQuery</title>
- <script src="jquery-3.2.1.min.js"></script>
-        <!-- CSS -->
+        <title>UTNFRA </title>
+        <script src="jquery-3.2.1.min.js"></script>
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+     
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Atomic+Age" rel="stylesheet">
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+        <!-- CSS -->
         <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
 		<link rel="stylesheet" href="assets/css/form-elements.css">
@@ -38,14 +43,16 @@
         <!-- Top content -->
         <div class="top-content">
         	
-            <div class="inner-bg">
+            <!-- <div class="inner-bg"> -->
+            <div class="">
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2 text">
-                            <h1><strong>UTN FRA</strong> Ejemplo JWT -Jquery</h1>
+                            <p></p>
+                            <h1 class="fuente-titulo"><strong>Estacionamiento</strong></h1>
                             <div class="description">
                             	<p>
-	                            	En este ejercicio se muestran los procedimientos para autentificar con JWT
+	                        
                             	</p>
                             </div>
                         </div>
@@ -58,7 +65,7 @@
                             		<p>Ingrese usuario y clave:</p>
                         		</div>
                         		<div class="form-top-right">
-                        			<i class="fa fa-key"></i>
+                        			<i class="fa fa-sign-in"></i>
                         		</div>
                             </div>
                             <div class="form-bottom">
@@ -71,10 +78,15 @@
 			                        	<label class="sr-only" for="form-password">Password</label>
 			                        	<input type="password"name="clave"  id="clave" placeholder="clave..." class="form-password form-control" id="form-password">
 			                        </div>
-                                     <p>admin@admin.com</p>
-                                     <p>1234</p>
+                                     <p></p>
+                                     <p></p>
 			                        <a onclick="ingresar()"class="btn btn-link-1">ingresar!</a>
-                                     <a onclick="enviarToken()"class="btn btn-link-2">enviar jwt!</a>
+                                     <!-- <a onclick="enviarToken()"class="btn btn-link-2">enviar jwt!</a> -->
+                                     <div class="form-group">
+                                        <div>
+                                            <input class="" id="recordarme" type="checkbox" checked> Recuerdame
+                                        </div>
+                                    </div>
 			                    </form>
 		                    </div>
                         </div>
