@@ -29,7 +29,7 @@ desarrollo para obtener información sobre los errores
 $app = new \Slim\App(["settings" => $config]);
 
 
-
+/*Comentario ApiDoc*/
 /*LLAMADA A METODOS DE INSTANCIA DE UNA CLASE*/
 $app->post('/ingreso/', function (Request $request, Response $response) {    
     
@@ -39,15 +39,15 @@ $app->post('/ingreso/', function (Request $request, Response $response) {
   $clave = $ArrayDeParametros['clave'];
 
  // var_dump($ArrayDeParametros );
-  if( $usuario &&  $clave )
+  if( $usuario &&  $clave )// SI... me pasaron los "DOS" parametros: usuario y clave
   {
 
       if( usuario::esValido($usuario,$clave))
       {
-        $datos=array('usuario'=>$usuario,'clave'=>$clave);
-        $token= AutentificadorJWT::CrearToken($datos);
-        $retorno=array('datos'=> $datos, 'token'=>$token );
-        $newResponse = $response->withJson( $retorno ,200); 
+        $datos=array('usuario'=>$usuario,'clave'=>$clave);//NO VA PASS, pasar perfil,rol,ultimo/1er/actual acceso.
+        $token= AutentificadorJWT::CrearToken($datos);//porque el token me lo va a mostrar en el frontend
+        $retorno=array('datos'=> $datos, 'token'=>$token );//a parte del token retorno lo que ME traigo los datos que le puse en usuario.php 'TraerUno'
+        $newResponse = $response->withJson( $retorno ,200); //aclarar en la linea 33 lo que retorno y porqué
       }
       else
       {
@@ -67,8 +67,8 @@ $app->post('/ingreso/', function (Request $request, Response $response) {
             ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
             ->withHeader('Access-Control-Allow-Methods',  'POST');
 
-  return $newResponse;
-
+  return $newResponse;//devuelvo $retorno con los datos(usuario y clave) y el token(validado)
+                      //o retorno un mensaje del error mas un nro que identifique el tipo de error
 });
 
 $app->get('/ingreso/', function (Request $request, Response $response,$arg) {    
@@ -103,11 +103,11 @@ $app->get('/ingreso/', function (Request $request, Response $response,$arg) {
    });
 
 
-
+//es lo que tiene que hacer cada vez que hay una peticion de datos, y esa epticion de datos necesita loguearse
 $app->get('/tomarToken[/]', function (Request $request, Response $response) {    
     
-	
-
+    //EL NOMBRE del token es muy importante, porque es lo que tengo que pasar al frontEnd. apiDoc en linea33 con el nombre
+    //
     $arrayConToken = $request->getHeader('miTokenUTNFRA');
     $token=$arrayConToken[0];
 

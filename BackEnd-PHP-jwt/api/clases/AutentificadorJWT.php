@@ -46,7 +46,7 @@ class AutentificadorJWT
            throw new Exception("Token no valido --".$e->getMessage());
         }
         
-        // si no da error,  verifico los datos de AUD que uso para saber de que lugar viene  
+        // si no da error,  verifico los datos de AUD que uso para saber de que lugar viene,IP,MacAddres,SO,dispositivo  
         if($decodificado->aud !== self::Aud())
         {
             throw new Exception("No es el usuario valido");

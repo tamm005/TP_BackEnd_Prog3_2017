@@ -43,10 +43,10 @@ function ingresar()
 function enviarToken()
 {
 	$.ajax({
-		  url: servidor+"tomarToken/",
-		  type: 'GET',
-		 
-		  headers: {"miTokenUTNFRA": localStorage.getItem('tokenUTNFRA')}
+		  url: servidor+"tomarToken/",//tomarGrilla seria. Lo que hago es empezar a pedirle datos, pero como tengo que
+		  type: 'GET', //estar logueado...en el header le paso el nombre de mi token.
+		 			//le paso mi token para que lo valide todo el tiempo
+		  headers: {"miTokenUTNFRA": localStorage.getItem('tokenUTNFRA')}//tokenUTNFRA es como lo almaceno en el localstorage
 	}).then( function(itemResponse) {
 		
         console.info("bien -->",itemResponse);
